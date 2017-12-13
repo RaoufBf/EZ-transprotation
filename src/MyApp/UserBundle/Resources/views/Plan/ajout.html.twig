@@ -1,0 +1,54 @@
+{% extends "MyAppUserBundle::layoutadmin.html.twig" %}
+{% block title %}
+    <title>Ajouter Admin</title>
+{% endblock %}
+{% block formulaire %}
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Ajouter un nouveau plan
+                    </header>
+                    <div class="panel-body">
+                        <div class="form">
+                            <form class="cmxform form-horizontal adminex-form" id="signupForm" method="POST" action="">
+                                <div class="form-group ">
+                                    <label for="nom" class="control-label col-lg-2">Nom</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="nom" name="nom" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="ville" class="control-label col-lg-2">Ville</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="ville" name="ville" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="Latitude" class="control-label col-lg-2">Latitude</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control " id="Latitude" name="Latitude" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="Longitude" class="control-label col-lg-2">Longitude</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control " id="Longitude" name="Longitude" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <button class="btn btn-primary" type="submit">Ajouter</button>
+                                        <button class="btn btn-default" type="button">Annuler</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div></div>
+
+{% endblock %}

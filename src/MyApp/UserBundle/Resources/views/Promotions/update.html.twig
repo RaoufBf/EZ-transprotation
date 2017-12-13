@@ -1,0 +1,56 @@
+{% extends "MyAppUserBundle::layoutResponsable.html.twig" %}
+{% block formulaire %}
+<h1>modifier une promotion </h1>
+
+{{ form_start(form) }}
+    <table>
+        <tr>
+            <td>
+                num
+            </td>
+            <td>
+                {{ form_widget(form.num) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                datedebut
+            </td>
+            <td>
+                {{ form_widget(form.datedebut) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                datefin
+            </td>
+            <td>
+                {{ form_widget(form.datefin) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                pourcentage
+            </td>
+            <td>
+                {{ form_widget(form.pourcentage) }}
+            </td>
+        </tr>
+        </td>
+        <td>
+            {{ form_widget(form.imageProm) }}
+        </td>
+        </tr>
+        </td>
+        <td>
+            {{ form_widget(form.nomProm) }}
+        </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form_widget(form.save) }}
+            </td>
+        </tr>
+    </table>
+ {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "MyAppUserBundle::index1.html.twig" %}
+{% block formulaire %}
+    <h1>Recherche offre</h1>
+    {{form(form)}}
+    <h2>Liste des offres</h2>
+
+    <table border="2" align="center">
+        <tr>
+
+            <td>nom de loffre </td>
+            <td>description</td>
+            <td>pourcentage</td>
+            <td>num voyage</td>
+            <td>date debut</td>
+            <td>date fin</td>
+            <td>image offre</td>
+
+
+
+        </tr>
+        {% for offres in offres %}
+            <tr>
+
+                <td>{{offres.nomoffre}}</td>
+                <td>{{offres.description}}</td>
+                <td>{{offres.pourcentage}}</td>%
+                <td>{{ offres.num.num }}</td>
+                <td>  {{offres.datedebut|date("d-m-Y")}} </td>
+                <td>  {{offres.datefin|date("d-m-Y")}} </td>
+                <td>  <img style="width: 200px" src=" {{ asset ("uploads/documents/" ~ offres.imageoffre)}}" /> </td>
+
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

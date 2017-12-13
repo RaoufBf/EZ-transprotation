@@ -1,0 +1,172 @@
+my_app_user_homepage:
+    path:     /as
+    defaults: { _controller: MyAppUserBundle:Default:index }
+my_app_user_Agent:
+    path:    /Agent
+    defaults: { _controller: MyAppUserBundle:Agent:index }
+
+my_app_user_Client:
+    path:     /Client
+    defaults: { _controller: MyAppUserBundle:Client:index }
+my_app_user_Admin:
+    path:     /Admin
+    defaults: { _controller: MyAppUserBundle:Admin:index }
+
+Ajout_Voyage:
+    path:     /AjoutVoyage
+    defaults: { _controller: MyAppUserBundle:Voyage:Ajout }
+afficher_Voyage:
+    path:     /listVoyage
+    defaults: { _controller: MyAppUserBundle:Voyage:List}
+
+DeleteVoyage:
+    path:     /Delete/{num}
+    defaults: { _controller: MyAppUserBundle:Voyage:Delete }
+UpdateVoyage:
+    path:     /Update/{num}
+    defaults: { _controller: MyAppUserBundle:Voyage:Update }
+
+affichage_Client:
+    path:     /affichageClient
+    defaults: { _controller: MyAppUserBundle:Voyage:AfficchageClient}
+affichage_Reserver:
+    path:     /affichageVoyage
+    defaults: { _controller: MyAppUserBundle:Voyage:ReserverAfficheClient}
+ResVoyage:
+    path:     /Confirme/{num}
+    defaults: { _controller: MyAppUserBundle:Voyage:Res }
+AjoutReservation:
+    path:     /reserver
+    defaults: { _controller: MyAppUserBundle:Reservation:Res}
+affichReservation:
+    path:     /AfficheR
+    defaults: { _controller: MyAppUserBundle:Reservation:AfficheRes}
+Rechercheduree:
+    path:     /Rechercheduree
+    defaults: { _controller: MyAppUserBundle:Voyage:Rechercheduree}
+RecherchePrix:
+    path:     /RecherchePrix
+    defaults: { _controller: MyAppUserBundle:Voyage:RecherchePrix}
+
+DeleteRes:
+    path:     /DeleteRes/{idRes}
+    defaults: { _controller: MyAppUserBundle:Reservation:DeleteRes }
+TestRes:
+    path:     /TestRes/{num}
+    defaults: { _controller: MyAppUserBundle:Reservation:Test }
+ajouter_moy:
+    path:     /moy/ajouter
+    defaults: { _controller: MyAppUserBundle:MoyTransport:ajout }
+
+affiche_moy:
+    path:     /moy/list
+    defaults: { _controller: MyAppUserBundle:MoyTransport:list }
+
+Delete_moy:
+    path:     /moy/Delete/{id}
+    defaults: { _controller: MyAppUserBundle:MoyTransport:Delete }
+
+Moydebase:
+    path:     /moy/moybase
+    defaults: { _controller: MyAppUserBundle:MoyTransport:list }
+
+Update_Moy:
+    path:     /moy/Update/{id}
+    defaults: { _controller: MyAppUserBundle:MoyTransport:Update }
+
+ajouter_plan:
+    path:     /plan/ajouter
+    defaults: { _controller: MyAppUserBundle:Plan:ajout }
+
+affiche_plan:
+    path:     /plan/liste
+    defaults: { _controller: MyAppUserBundle:Plan:list }
+
+Delete_plan:
+    path:     /plan/Delete/{id}
+    defaults: { _controller: MyAppUserBundle:Plan:Delete }
+
+planbase:
+    path:     /plan/planbase
+    defaults: { _controller: MyAppUserBundle:Plan:list }
+
+Update_Plan:
+    path:     /plan/Update/{id}
+    defaults: { _controller: MyAppUserBundle:Plan:Update }
+
+
+
+
+ajouter_reclamation:
+    path:     /ajouterrec
+    defaults: { _controller: MyAppUserBundle:Reclamation:ajout }
+
+afficher_reclamation:
+    path:     /afficherrec
+    defaults: { _controller: MyAppUserBundle:Reclamation:afficher }
+
+sup_reclamation:
+    path:     /suprec/{id}
+    defaults: { _controller: MyAppUserBundle:Reclamation:delete }
+
+modif_reclamation:
+    path:     /updaterec/{id}
+    defaults: { _controller: MyAppUserBundle:Reclamation:Update }
+
+recherche_reclamation:
+    path:     /recherche/rec
+    defaults: { _controller: MyAppUserBundle:Reclamation:Recherche }
+
+ajouter_offre:
+    path:     /ajouterof
+    defaults: { _controller: MyAppUserBundle:Offre:ajout }
+
+afficher_offre:
+    path:     /afficherof
+    defaults: { _controller: MyAppUserBundle:Offre:afficher }
+
+sup_offre:
+    path:     /suprof/{id}
+    defaults: { _controller: MyAppUserBundle:Offre:Delete }
+
+modif_offre:
+    path:     /updateof/{id}
+    defaults: { _controller: MyAppUserBundle:Offre:Update }
+
+recherche_offre:
+    path:     /rechercheof
+    defaults: { _controller: MyAppUserBundle:Offre:Recherche }
+
+rechercher_offre:
+    path:     /rechercheroffre
+    defaults: { _controller: MyAppUserBundle:Offre:rechercher }
+
+afficherclient_offre:
+    path:     /afficherclientof
+    defaults: { _controller: MyAppUserBundle:Offre:afficherClient }
+
+inscrire:
+    path:     /inscriof/{id}
+    defaults: { _controller: MyAppUserBundle:Inscription:Ajout }
+
+
+
+
+Ajout_Promo:
+    path:     /AjoutPromo
+    defaults: { _controller: MyAppUserBundle:Promotion:Ajout }
+
+Delete_Promotion:
+    path:     /DeletePromo/{id}
+    defaults: { _controller: MyAppUserBundle:Promotion:Delete }
+AffichagePromo:
+    path:     /listPromotion
+    defaults: { _controller: MyAppUserBundle:Promotion:List }
+
+Update_Promo:
+    path:     /updatePromo/{id}
+    defaults: { _controller: MyAppUserBundle:Promotion:Update }
+
+AffichageclientPromo:
+    path:     /listclientpromotion
+    defaults: { _controller: MyAppUserBundle:Promotion:Listclient }

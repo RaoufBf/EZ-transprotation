@@ -1,0 +1,50 @@
+{% extends "MyAppUserBundle::layoutadmin.html.twig" %}
+{% block title %}
+    <title>Ajouter Admin</title>
+{% endblock %}
+{% block formulaire %}
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Ajouter un nouveau moyen de transport
+                    </header>
+                    <div class="panel-body">
+                        <div class="form">
+                            <form class="cmxform form-horizontal adminex-form" id="signupForm" method="POST" action="">
+                                <div class="form-group ">
+                                    <label for="matricule" class="control-label col-lg-2">Matricule</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="matricule" name="matricule" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="type" class="control-label col-lg-2">Type</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="type" name="type" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="capacite_moyen" class="control-label col-lg-2">Capacité moyen</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control " id="capacite_moyen" name="capacite_moyen" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <button class="btn btn-primary" type="submit">Ajouter</button>
+                                        <button class="btn btn-default" type="button">Annuler</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div></div>
+
+{% endblock %}
+
+

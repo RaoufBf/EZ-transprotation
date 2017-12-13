@@ -1,0 +1,50 @@
+{% extends "MyAppUserBundle::layoutadmin.html.twig" %}
+{% block title %}
+    <title>Liste des Moyen De Transport</title>
+{% endblock %}
+{% block formulaire %}
+<div class="wrapper">
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Liste des Moyen De Transport
+                    <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+                        </span>
+                </header>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Matricule</th>
+                            <th>Type</th>
+                            <th>Capacité Moyen</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for moytransport in moytransports %}
+
+                        <tr>
+                            <td>{{ moytransport.matricule }}</td>
+                            <td>{{ moytransport.type }}</td>
+                            <td>{{ moytransport.capaciteMoyen }}</td>
+                            <td><a class="button" href="{{ path('Delete_moy',{'id':moytransport.idMoyen})}}">Supprimer</a></td>
+                            <td><a href="{{ path('Update_Moy',{'id':moytransport.idMoyen})}}">mise à jour</a></td>
+                        </tr>
+                        {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+        </div>
+
+    </div>
+
+
+
+    {% endblock %}

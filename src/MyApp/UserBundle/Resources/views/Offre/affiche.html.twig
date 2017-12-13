@@ -1,0 +1,35 @@
+{% extends "MyAppUserBundle::layoutResponsable.html.twig" %}
+{% block formulaire %}
+<table border="2" align="center">
+
+
+    <tr>
+
+        <td>nom de loffre </td>
+        <td>description</td>
+        <td>pourcentage</td>
+        <td>num voyage</td>
+        <td>date debut</td>
+        <td>date fin</td>
+        <td>image offre</td>
+        <td colspan="2">actions</td>
+
+
+    </tr>
+    {% for e in offres %}
+        <tr>
+
+            <td>{{e.nomoffre}}</td>
+            <td>{{e.description}}</td>
+            <td>{{e.pourcentage}}</td>%
+            <td>{{ e.num.num }}</td>
+            <td>  {{e.datedebut|date("d-m-Y")}} </td>
+            <td>  {{e.datefin|date("d-m-Y")}} </td>
+            <td>  <img style="width: 200px" src=" {{ asset ("uploads/documents/" ~ e.imageoffre)}}" /> </td>
+            <td><a href="{{ path('sup_offre',{'id':e.idoffre})}}"><button >Supprimer</button></a></td>
+            <td><a href="{{ path('modif_offre',{'id':e.idoffre})}}"><button>modifier</button></a></td>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

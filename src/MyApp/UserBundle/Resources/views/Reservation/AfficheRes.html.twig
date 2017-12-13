@@ -1,0 +1,46 @@
+{% extends "MyAppUserBundle::layoutadmin.html.twig" %}
+{% block formulaire %}
+    <h1 align="center"> liste des Reservations </h1>
+    <h5 align="center"> (NB: Vous ne pouver supprimer que des réservations non payés) </h5>
+    <table border="6"  bordercolor="black" align="center">
+        <tr>
+
+            <th>pseudo</th>
+            <th>numéro voyage</th>
+            <th>date depart</th>
+            <th>heure depart</th>
+            <th>ville depart</th>
+            <th>date arrivee</th>
+            <th>heure arrivee</th>
+            <th>ville arrivee</th>
+            <th>nombre de place reservé</th>
+            <th>date reservation</th>
+            <th>Paiement</th>
+            <th>Annuler</th>
+
+
+        </tr>
+
+        {% for R in Reservations %}
+            <tr>
+
+                <td>{{ R.pseudo}}</td>
+                <td> {{R.num.num}}</td>
+                <td> {{R.num.dateDepart|date('Y-m-d') }}</td>
+                <td> {{R.num.heureDepart|date('H:i')}}</td>
+                <td> {{R.num.villeDepart}}</td>
+                <td> {{R.num.dateArrivee|date('Y-m-d') }}</td>
+                <td> {{R.num.heureArrivee|date('H:i')}}</td>
+                <td> {{R.num.villeArrivee}}</td>
+                <td>{{ R.nbrPlace}}</td>
+                <td>{{ R.dateReservation|date}}</td>
+                <td>{{ R.paiement}}</td>
+
+                <td> <a href="{{ path("DeleteRes",{'idRes':R.idRes}) }}">Supprimer</a> </td></td>
+
+
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

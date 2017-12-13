@@ -1,0 +1,65 @@
+{% extends "MyAppUserBundle::layoutResponsable.html.twig" %}
+{% block formulaire %}
+<h1> Update Voyage </h1>
+
+{{ form_start (form) }}
+<table>
+  <tr>
+
+      <td> Date de depart:</td>
+      <td>{{ form_widget(form.dateDepart) }}</td>
+  </tr>
+    <tr>
+
+        <td> heure depart</td>
+        <td>{{ form_widget(form.heureDepart)}}</td>
+    </tr>
+    <tr>
+
+        <td> date Arrivee</td>
+        <td>{{ form_widget(form.dateArrivee) }}</td>
+    </tr>
+    <tr>
+
+        <td> heure Arrivee</td>
+        <td>{{ form_widget(form.heureArrivee) }}</td>
+    </tr>
+    <tr>
+
+        <td> ville Depart</td>
+        <td>{{ form_widget(form.villeDepart) }}</td>
+    </tr>
+    <tr>
+
+        <td> ville Arrivee</td>
+        <td>{{ form_widget(form.villeArrivee) }}</td>
+    </tr>
+    <tr>
+
+        <td> typet</td>
+        <td>{{ form_widget(form.type) }}</td>
+    </tr>
+    <tr>
+
+        <td> prix</td>
+        <td>{{ form_widget(form.prix) }}</td>
+    </tr>
+
+    <tr>
+
+        <td> duree</td>
+        <td>{{ form_widget(form.duree) }}</td>
+    </tr>
+    <tr>
+
+        <td> capaciteMoyen</td>
+        <td>{{ form_widget(form.capaciteMoyen) }}</td>
+    </tr>
+<tr>
+
+    <td>{{ form_widget(form.Enregistrer) }}</td>
+</tr>
+
+</table>
+{{ form_end (form) }}
+{% endblock %}

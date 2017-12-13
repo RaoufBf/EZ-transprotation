@@ -1,0 +1,43 @@
+{% extends "MyAppUserBundle::layoutResponsable.html.twig" %}
+{% block formulaire %}
+<h1 align="center"> liste des voyages </h1>
+<table border="6" bgcolor="#ff69b4" bordercolor="black" align="center">
+    <tr>
+
+        <th>num</th>
+        <th>date départ</th>
+        <th>heure départ</th>
+        <th>date arrivée</th>
+        <th>heure arrivée</th>
+        <th>ville départ</th>
+        <th>ville arrivée</th>
+        <th>Moyen de transport</th>
+        <th>prix</th>
+        <th>duree</th>
+        <th>capacite</th>
+        <th>Suppression</th>
+        <th>Modification</th>
+
+    </tr>
+
+    {% for voyage in Voyages %}
+        <tr>
+
+            <td>{{ voyage.num }}</td>
+            <td>{{ voyage.dateDepart|date('Y-m-d') }}</td>
+            <td>{{ voyage.heureDepart|date('H:i') }}</td>
+            <td>{{ voyage.dateArrivee |date('Y-m-d')}}</td>
+            <td>{{ voyage.heureArrivee |date('H:i')}}</td>
+            <td>{{ voyage.villeDepart }}</td>
+            <td>{{ voyage.villeArrivee }}</td>
+            <td>{{ voyage.type}}</td>
+            <td>{{ voyage.prix }}</td>
+            <td>{{ voyage.duree }}</td>
+            <td>{{ voyage.capaciteMoyen }}</td>
+            <td> <a href="{{ path("DeleteVoyage",{'num':voyage.num}) }}">Supprimer</a> </td></td>
+            <td> <a href="{{ path("UpdateVoyage",{'num':voyage.num}) }}">Modifier</a> </td></td>
+
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

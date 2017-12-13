@@ -1,0 +1,30 @@
+{% extends "MyAppUserBundle::layoutResponsable.html.twig" %}
+{% block formulaire %}
+
+    <link rel="stylesheet" href="{{ asset('bundles/myappuser/css/jobs.css') }}" type="text/css" media="all" />
+<h1>Liste des Promotion </h1>
+ <table border="1">
+     <tr>
+         <th>nom promotion</th>
+         <th>num</th>
+         <th>datedebut</th>
+         <th>datefin</th>
+         <th>pourcentage</th>
+         <th>image promotion</th>
+         <th>Suppression</th>
+         <th>Mise à jour</th>
+     </tr>
+     {% for promotion in promotions %}
+     <tr>
+         <td>{{ promotion.nomprom }}</td>
+         <td>{{ promotion.num.num }}</td>
+         <td>{{ promotion.datedebut|date('Y-m-d') }}</td>
+         <td>{{ promotion.datefin|date('Y-m-d')}}</td>
+         <td>{{ promotion.pourcentage }}</td>
+         <td>  <img style="width: 200px" src=" {{ asset ("promo/promos/" ~ promotion.imageProm)}}" /> </td>
+         <td> <a href="{{ path("Delete_Promotion",{'id':promotion.idpromo}) }}">Supprimer</a> </td>
+         <td> <a href="{{ path("Update_Promo",{'id':promotion.idpromo}) }}">mise à jour</a> </td>
+     </tr>
+     {% endfor %}
+ </table>
+{% endblock %}

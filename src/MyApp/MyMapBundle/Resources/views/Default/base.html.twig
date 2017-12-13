@@ -1,0 +1,146 @@
+{% extends "MyAppUserBundle::layoutMap.html.twig" %}
+{% block formulaire %}
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Waypoints in directions</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZX3xudxZvqgFA9ofVUiiwVc8n8rEut0k&signed_in=true" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map-canvas {
+            height: 100%;
+            float: left;
+            width: 70%;
+            height: 80%;
+        }
+
+        #right-panel {
+            font-family: 'Roboto', 'sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        #right-panel select, #right-panel input {
+            font-size: 15px;
+        }
+
+        #right-panel select {
+            width: 100%;
+        }
+
+        #right-panel i {
+            font-size: 12px;
+        }
+
+        #right-panel {
+            margin: 20px;
+            border-width: 2px;
+            width: 20%;
+            float: left;
+            text-align: left;
+            padding-top: 20px;
+        }
+
+        #directions-panel {
+            margin-top: 20px;
+            background-color: #FFEE77;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="map-canvas"></div>
+<div id="right-panel">
+    <div>
+        <b>Start:</b>
+        <select id="start">
+            {%  for plan in listePlan %}
+                <option value="['{{ plan.latitude }}', '{{ plan.longitude }}']">{{ plan.nom }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+
+
+        <br>
+        <b>End:</b>
+        <select id="end">
+            {%  for plan in listePlan %}
+                <option value="['{{ plan.latitude }}', '{{ plan.longitude }}']">{{ plan.nom }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="submit" id="submit" onclick="initMap()">
+    </div>
+    <div id="directions-panel"></div>
+</div>
+<script>
+    function initMap() {
+       var valA =  $( "#start option:selected" ).val();
+        valA = valA.replace(/^\[\'|\'\]$/g,'').split("', '");
+        var valB =  $( "#end option:selected" ).val();
+        valB = valB.replace(/^\[\'|\'\]$/g,'').split("', '");
+        console.log(valA[0]);
+        console.log(valA[1]);
+        console.log(valB[0]);
+        console.log(valB[1]);
+        var pointA = new google.maps.LatLng(valA[0],valA[1]),
+                pointB = new google.maps.LatLng(valB[0],valB[1]),
+                myOptions = {
+                    zoom: 7,
+                    center: pointA
+                },
+                map = new google.maps.Map(document.getElementById('map-canvas'), myOptions),
+                // Instantiate a directions service.
+                directionsService = new google.maps.DirectionsService,
+                directionsDisplay = new google.maps.DirectionsRenderer({
+                    map: map
+                }),
+                markerA = new google.maps.Marker({
+                    position: pointA,
+                    title: "point A",
+                    label: "A",
+                    map: map
+                }),
+                markerB = new google.maps.Marker({
+                    position: pointB,
+                    title: "point B",
+                    label: "B",
+                    map: map
+                });
+
+        // get route from A to B
+        calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+
+    }
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+        directionsService.route({
+            origin: pointA,
+            destination: pointB,
+            avoidTolls: true,
+            avoidHighways: false,
+            travelMode: google.maps.TravelMode.DRIVING
+        }, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
+    }
+    initMap();
+</script>
+{#<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZX3xudxZvqgFA9ofVUiiwVc8n8rEut0k&signed_in=true&callback=initMap"#}
+        {#async defer></script>#}
+</body>
+
+</html>
+{% endblock %}

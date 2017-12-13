@@ -1,0 +1,31 @@
+{% extends "MyAppUserBundle::index1.html.twig" %}
+{% block formulaire %}
+
+
+    <div class="row">
+        {% for promo in promotions %}
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+
+                        <img src="{{ asset ('promo/promos/' ~ promo.imageProm) }}" alt="">
+                    </a>
+                </div>
+
+                <div class="caption">
+                    <h4 class="pull-right">{{ promo.nomProm }}</h4>
+                    </h4>
+
+                </div>
+                <div class="ratings">
+                    <p class="pull-right">date debut: {{ promo.datedebut|date("d-m-Y") }} <br>
+                        date fin: {{ promo.datefin|date("d-m-Y") }}</p>
+
+                </div>
+
+
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

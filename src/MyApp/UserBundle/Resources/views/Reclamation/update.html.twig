@@ -1,0 +1,29 @@
+{% extends "MyAppUserBundle::layoutadmin.html.twig" %}
+{% block formulaire %}
+<h1>modifier </h1>
+{{ form_start(form) }}
+<table>
+    <tr>
+        <td>
+            pseudo
+        </td>
+        <td>
+            {{ form_widget(form.pseudo) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            msg
+        </td>
+        <td>
+            {{ form_widget(form.msg) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ form_widget(form.save) }}
+        </td>
+    </tr>
+</table>
+{{ form_end(form) }}
+{% endblock %}

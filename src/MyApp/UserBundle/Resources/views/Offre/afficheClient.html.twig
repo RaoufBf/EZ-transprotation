@@ -1,0 +1,37 @@
+{% extends "MyAppUserBundle::index1.html.twig" %}
+{% block formulaire %}
+    <a href="{{ path('rechercher_offre')}}" />   <button>recherche offre</button></a>
+
+    <div class="row">
+    {% for offre in offres %}
+        <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+        <a href="{{ path('inscrire',{'id':offre.idOffre}) }}">
+            <img src="{{ asset ('uploads/documents/' ~ offre.imageoffre) }}" alt="">
+        </a>
+            </div>
+
+        <div class="caption">
+            <h4 class="pull-right">{{ offre.nomoffre }}</h4>
+            <h4><a href="{{ path('afficher_Voyage') }}">num voyage: {{offre.num.num }}</a>
+            </h4>
+            <p>{{ offre.description }}</p>
+        </div>
+        <div class="ratings">
+        <p class="pull-right">date debut: {{ offre.datedebut|date("d-m-Y") }} <br>
+        date fin: {{ offre.datefin|date("d-m-Y") }}</p>
+            <br>
+          <br>
+
+            <br>
+            <br>
+        </div>
+
+        {{ socialButtons() }}
+
+        </div>
+    {% endfor %}
+        </div>
+
+
+{% endblock %}

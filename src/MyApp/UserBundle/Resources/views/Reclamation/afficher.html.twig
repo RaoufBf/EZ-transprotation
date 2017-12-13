@@ -1,0 +1,24 @@
+{% extends "MyAppUserBundle::layoutadmin.html.twig" %}
+{% block formulaire %}
+<table border="2" align="center">
+    <tr>
+
+        <td>pseudo</td>
+        <td>message de reclamation</td>
+        <td> Date </td>
+        <td colspan="2"> actions </td>
+
+    </tr>
+    {% for e in reclamations %}
+    <tr>
+
+        <td>{{e.pseudo}}</td>
+        <td>{{e.msg}}</td>
+        <td>  {{e.datereclamation|date("d-m-Y")}} </td>
+        <td><a href="{{ path('sup_reclamation',{'id':e.idreclamation})}}">Supprimer</a></td>
+        <td><a href="{{ path('modif_reclamation',{'id':e.idreclamation})}}">modifier</a></td>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock  %}

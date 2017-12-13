@@ -1,0 +1,86 @@
+{% extends "MyAppUserBundle::layoutResponsable.html.twig" %}
+{% block formulaire %}
+<h1>modifier </h1>
+{{ form_start(form) }}
+<table border="1" align="center">
+    <tr>
+        <td>
+            nomoffre
+        </td>
+        <td>
+            {{ form_widget(form.nomoffre) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            description
+        </td>
+        <td>
+            {{ form_widget(form.description) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            pourcentage
+        </td>
+        <td>
+            {{ form_widget(form.pourcentage) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            datedebut
+        </td>
+        <td>
+            {{ form_widget(form.datedebut) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            datefin
+        </td>
+        <td>
+            {{ form_widget(form.datefin) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            imageoffre
+        </td>
+        <td>
+            {{ form_widget(form.imageoffre) }}
+        </td>
+    </tr>
+    <tr>
+    <tr>
+        <td>
+            pointfidelite
+        </td>
+        <td>
+            {{ form_widget(form.pointfidelite) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            nombre de j aime
+        </td>
+        <td>
+            {{ form_widget(form.nbrjm) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            num
+        </td>
+        <td>
+            {{ form_widget(form.num) }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ form_widget(form.save) }}
+        </td>
+    </tr>
+</table>
+{{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "MyAppUserBundle::layoutadmin.html.twig" %}
+{% block formulaire %}
+<h1>Recherche reclamation par pseudo</h1>
+{{form(form)}}
+<h2>Liste des Reclamations</h2>
+<table border="2" align="center">
+    <tr>
+        <th>pseudo</th>
+        <th>msg </th>
+        <th>datereclamation </th>
+    </tr>
+    {% for rec in reclamations %}
+        <tr>
+            <td>{{ rec.pseudo }}</td>
+            <td>{{ rec.msg }}</td>
+            <td>{{ rec.datereclamation|date("d-m-Y")}}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

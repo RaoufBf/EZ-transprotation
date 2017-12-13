@@ -1,0 +1,58 @@
+
+{% extends "MyAppUserBundle::layoutadmin.html.twig" %}
+{% block title %}
+    <title>Liste des Plans</title>
+{% endblock %}
+{% block formulaire %}
+<div class="wrapper">
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Liste des Plans
+                    <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+                        </span>
+                </header>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Ville</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for plan in plans %}
+                            <tr>
+                                <td>{{ plan.nom }}</td>
+                                <td>{{ plan.ville }}</td>
+                                <td>{{ plan.Latitude }}</td>
+                                <td>{{ plan.Latitude }}</td>
+                                <td><a href="{{ path('Delete_plan',{'id':plan.idplan})}}">Supprimer</a></td>
+                                <td><a href="{{ path('Update_Plan',{'id':plan.idplan})}}">mise à jour</a></td>
+
+                            </tr>
+
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+        </div>
+
+    </div>
+
+
+
+    {% endblock %}
+
+
+
+

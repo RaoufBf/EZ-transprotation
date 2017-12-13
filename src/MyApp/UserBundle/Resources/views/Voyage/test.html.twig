@@ -1,0 +1,18 @@
+{% extends "MyAppUserBundle::index1.html.twig" %}
+
+
+{% block formulaire %}
+<h1> Reservation </h1>
+
+
+<form Method="POST">
+
+    entrer le nombre place à réserver:    <input type="text" name="nbr"><br><br>
+
+    <input type="submit" value="Confirmer la Réservation" name="submit">
+
+
+
+</form>
+
+{% endblock %}

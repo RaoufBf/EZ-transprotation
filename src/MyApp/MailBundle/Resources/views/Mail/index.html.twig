@@ -1,0 +1,32 @@
+{% extends "MyAppUserBundle::Adminindex.html.twig" %}
+{% block formulaire %}
+
+    <h2> <strong > Formulaire De Contact</strong> </h2>
+    <hr>
+    <h3><p align="center"> Contacter un client </p></h3>
+    {{ form_start (form) }}
+    <table align="center" >
+        <tr>
+            <td> Nom: </td>
+            <td> {{ form_widget (form.nom) }} </td>
+        </tr>
+        <tr>
+            <td> Prenom: </td>
+            <td> {{ form_widget (form.prenom) }} </td>
+        </tr>
+
+        <tr>
+            <td> Email: </td>
+            <td> {{ form_widget (form.email) }} </td>
+        </tr>
+        <tr>
+            <td> Text: </td>
+            <td> {{ form_widget (form.text) }} </td>
+        </tr>
+
+    </table>
+<br>
+
+{% endblock %}
+
+

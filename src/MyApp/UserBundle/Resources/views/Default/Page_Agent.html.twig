@@ -1,0 +1,77 @@
+<!doctype html>
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title>IncomeUp - Documentation</title>
+
+    <meta name="description" content="Documentation for Straight site template." />
+    <meta name="author" content="spyropress" />
+    <meta name="copyright" content="spyropress" />
+    <meta name="generator" content="Documenter v1.3 http://rxa.li/documenter" />
+    <meta name="date" content="2011-05-31T00:00:00+02:00" />
+
+    <link rel="stylesheet" href="{{ asset('css/documenter_style.css') }}" media="all" />
+
+    <script src="{{ asset('js/jquery.1.5.1.js') }}"></script>
+
+    <script src="{{ asset('js/jquery.scrollTo-1.4.2-min.js') }}"></script>
+    <script src="{{ asset('js/jquery.easing.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ asset('css/shDocumenter.css') }}" media="screen" />
+    <script src="{{ asset('js/shCore.js') }}"></script>
+    <script src="{{ asset('js/shBrushCss.js') }}"></script>
+    <script src="{{ asset('js/shBrushXml.js') }}"></script>
+    <script src="{{ asset('js/shBrushJScript.js') }}"></script>
+    <script>SyntaxHighlighter.defaults['toolbar'] = false;SyntaxHighlighter.all();</script>
+
+    <script>document.createElement('section');var duration=500,easing='swing';</script>
+    <script src="{{ asset('js/script.js') }}"></script>
+
+    <style>
+        html{background-color:#f9f7f5;color:#383838;}
+        ::-moz-selection{background: #adfc19;}
+        ::selection{background:#fcd355;}
+        #documenter_sidebar #documenter_logo{background-image:url(images/logo.png);}
+        a{color:#ED4D24;}
+        hr{border-top:1px solid #e3e3e3;border-bottom:1px solid #FFFFFF;}
+        #documenter_sidebar, #documenter_sidebar ol a{background:#25292D;color:#888;}
+        #documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #B9F2EF;-moz-text-shadow:0px 1px 0px #C8E9EC;text-shadow:0px 1px 0px #C8E9EC;}
+        #documenter_sidebar ol a{background:#9DC6C9; border-bottom:1px solid #81a9ac;border-top:1px solid #b6dcdf;color:#122b31;}
+        #documenter_sidebar ol a:hover{background: #8cb3f3;color:#FBFFE4;border-top:1px solid #e65248;border-bottom:1px solid #ec544a;}
+        #documenter_sidebar ol a.current{background:#F3594F;color:#FBFFE4;border-top:1px solid #e65248;border-bottom:1px solid #ec544a;}
+        #documenter_copyright{display:block !important;visibility:visible !important;}
+    </style>
+
+
+</head>
+<body>
+
+<div id="documenter_sidebar">
+
+
+    <a href="{{ asset('http://themeforest.net/user/spyropress') }}" id="documenter_logo"></a>
+    <ol id="documenter_nav">
+        <li><a class="current" href="#documenter_cover">Start</a></li>
+        <li><a href="#folder_structure">Folder Structure</a></li>
+        <li><a href="#html_structure">HTML Structure</a></li>
+        <li><a href="#css_files_and_structure">CSS Files and Structure</a></li>
+        <li><a href="#javascript">JavaScript</a></li>
+        <li><a href="#elements">Elements</a></li>
+        <li><a href="#sources_and_credits">Sources and Credits</a></li>
+
+    </ol>
+
+</div>
+<div id="documenter_content">
+
+    <br>
+    {% block formulaire %}
+    {% endblock %}
+</div>
+</body>
+</html>
